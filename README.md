@@ -23,19 +23,6 @@ The lab typically covers:
 - **Tools**: Standard Java networking libraries (java.net, java.io)
 - **Build System**: Maven/Gradle (optional)
 
-## Project Structure
-```
-cn-lab/
-├── README.md
-├── src/
-│   └── main/
-│       └── java/
-│           ├── client/
-│           ├── server/
-│           └── util/
-└── docs/
-    └── exercises/
-```
 
 ## Getting Started
 1. Clone the repository
@@ -49,15 +36,10 @@ cn-lab/
 - Basic understanding of networking concepts
 - Familiarity with Java programming
 
-## Usage
-Each lab exercise will have specific compilation and execution instructions. Refer to individual exercise documentation for details.
-
 ## Contributing
 This is a lab repository for educational purposes. Feel free to add improvements, fix bugs, or enhance documentation.
 
 ## License
 This project is provided for educational purposes.
 
----
 
-**Note**: This README serves as a template. Update it with specific lab exercises, assignments, and implementation details as the course progresses.
