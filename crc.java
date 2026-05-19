@@ -1,12 +1,10 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class CRCChecker {
+class CRC {
 
-    // Method to perform XOR operation (skipping the leading bit)
     static String xor(String a, String b) {
         StringBuilder result = new StringBuilder();
 
-        // Starts from 1 because the leading bit is always eliminated (becomes 0)
         for (int i = 1; i < b.length(); i++) {
             if (a.charAt(i) == b.charAt(i)) {
                 result.append('0');
@@ -14,86 +12,79 @@ public class CRCChecker {
                 result.append('1');
             }
         }
+
         return result.toString();
     }
 
-    // Method to perform CRC division
     static String divide(String dividend, String divisor) {
+
         int divisorLength = divisor.length();
         int pick = divisorLength;
 
-        // Fetch the first 'divisorLength' bits
         String temp = dividend.substring(0, pick);
 
         while (pick < dividend.length()) {
+
             if (temp.charAt(0) == '1') {
-                // XOR with divisor and pull down the next bit
                 temp = xor(divisor, temp) + dividend.charAt(pick);
             } else {
-                // XOR with 0s of the SAME length and pull down the next bit
                 temp = xor("0".repeat(divisorLength), temp) + dividend.charAt(pick);
             }
+
             pick++;
         }
 
-        // Last step (No more bits to pull down)
         if (temp.charAt(0) == '1') {
             temp = xor(divisor, temp);
         } else {
-            // FIX: Use divisorLength here instead of pick
             temp = xor("0".repeat(divisorLength), temp);
         }
 
         return temp;
     }
 
-    // Method to encode data with CRC
     static String encodeData(String data, String divisor) {
+
         int divisorLength = divisor.length();
 
-        // Append N-1 zeros to the data
         String appendedData = data + "0".repeat(divisorLength - 1);
 
-        // Find remainder
         String remainder = divide(appendedData, divisor);
 
-        // Append remainder to original data
         return data + remainder;
     }
 
-    // Method to check received data
     static boolean checkData(String receivedData, String divisor) {
+
         String remainder = divide(receivedData, divisor);
 
-        // If remainder contains only 0s → no error
         for (int i = 0; i < remainder.length(); i++) {
             if (remainder.charAt(i) != '0') {
                 return false;
             }
         }
+
         return true;
     }
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter data bits: ");
-        String data = sc.nextLine();
+        String data = sc.next();
 
         System.out.print("Enter divisor: ");
-        String divisor = sc.nextLine();
+        String divisor = sc.next();
 
-        // Sender side
-        String transmittedData = encodeData(data, divisor);
-        System.out.println("Encoded Data (Data + CRC): " + transmittedData);
+        String encodedData = encodeData(data, divisor);
 
-        // Receiver side
+        System.out.println("Encoded Data (Data + CRC): " + encodedData);
+
         System.out.print("Enter received data: ");
-        String receivedData = sc.nextLine();
+        String receivedData = sc.next();
 
-        boolean isValid = checkData(receivedData, divisor);
-
-        if (isValid) {
+        if (checkData(receivedData, divisor)) {
             System.out.println("No Error Detected");
         } else {
             System.out.println("Error Detected");
