@@ -1,4 +1,4 @@
-# cn-lab
+# cn-lab [ semester - 6 ]
 
 A laboratory repository for Computer Networks concepts and implementations.
 
@@ -45,15 +45,6 @@ java <classname>
 #### Python Scripts
 ```bash
 python <script_name>.py
-```
-
-## Repository Structure
-
-```
-cn-lab/
-├── README.md
-├── java/              # Java implementations
-└── python/            # Python utilities and scripts
 ```
 
 ## Usage
