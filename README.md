@@ -2,23 +2,23 @@
 
 A laboratory repository for Computer Networks concepts and implementations.
 
-## 📋 Overview
+## Overview
 
 This repository contains implementations and experiments related to computer networking concepts. It serves as a learning resource and practical reference for network programming, protocols, and distributed systems.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Java** (75.9%) - Primary implementation language for networking protocols and client-server applications
 - **Python** (24.1%) - Utility scripts, network simulations, and data analysis
 
-## 📚 Features
+## Features
 
 - Implementation of networking protocols
 - Socket programming examples
 - Network simulation and testing utilities
 - Network algorithm demonstrations
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ java <classname>
 python <script_name>.py
 ```
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 cn-lab/
@@ -56,26 +56,26 @@ cn-lab/
 └── python/            # Python utilities and scripts
 ```
 
-## 📝 Usage
+## Usage
 
 Detailed usage instructions for individual programs will be added as projects grow.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
 
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
 
-## 👤 Author
+## Author
 
 [maithilimukherjee](https://github.com/maithilimukherjee)
 
-## 📞 Support
+## Support
 
 For questions or support, please open an issue in the repository.
 
 ---
 
-**Last Updated:** June 3, 2026
+Last Updated: June 3, 2026
